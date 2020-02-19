@@ -31,7 +31,8 @@ public class LevelSpawner : MonoBehaviour
         Vector2 spawnPosition = new Vector2(spawnX, 0f);
 
         GameObject obj = Instantiate(chunksToSpawn[rand], spawnPosition, Quaternion.identity, transform);
-        spawnX += chunkLength;
+        Chunk chunk = obj.GetComponent<Chunk>();
+        spawnX += chunk.GetChunkLength();
     }
 
     public void SpawnInitialChunks()
