@@ -8,9 +8,10 @@ public class LevelSpawner : MonoBehaviour
 
     public int amountChunksOnScreen = 2;
     public float spawnX = 0f;
-    public float chunkLength = 13.32f;
 
     protected GameObject objPlayer;
+    protected float countLimitSpawnChunk = 0f;
+    protected List<float> lastChunksLength = new List<float>();
 
     private void Start()
     {
@@ -33,6 +34,13 @@ public class LevelSpawner : MonoBehaviour
         GameObject obj = Instantiate(chunksToSpawn[rand], spawnPosition, Quaternion.identity, transform);
         Chunk chunk = obj.GetComponent<Chunk>();
         spawnX += chunk.GetChunkLength();
+
+        if (lastChunksLength.Count > amountChunksOnScreen)
+        {
+            lastChunksLength.RemoveAt(0);
+        }
+
+        lastChunksLength.Add(chunk.GetChunkLength());
     }
 
     public void SpawnInitialChunks()
@@ -43,9 +51,20 @@ public class LevelSpawner : MonoBehaviour
         }
     }
 
+    public float SumLastChunksLength()
+    {
+        float value = 0f;
+
+        foreach (var item in lastChunksLength)
+        {
+            value += item;
+        }
+        return value;
+    }
+
     public bool HasReachedLimit()
     {
-        if (objPlayer.transform.position.x > (spawnX - amountChunksOnScreen * chunkLength))
+        if (objPlayer.transform.position.x > (spawnX - SumLastChunksLength()))
             return true;
 
         return false;
