@@ -16,18 +16,13 @@ public class LevelSpawner : MonoBehaviour
     {
         objPlayer = GameObject.FindGameObjectWithTag("Player");
 
-        for(int count = 0; count < amountChunksOnScreen; count++)
-        {
-            SpawnChunk();
-        }
+        SpawnInitialChunks();
     }
 
     private void Update()
     {
-        if (objPlayer.transform.position.x > (spawnX - amountChunksOnScreen * chunkLength))
-        {
+        if (HasReachedLimit())
             SpawnChunk();
-        }
     }
 
     public void SpawnChunk()
@@ -37,6 +32,22 @@ public class LevelSpawner : MonoBehaviour
 
         GameObject obj = Instantiate(chunksToSpawn[rand], spawnPosition, Quaternion.identity, transform);
         spawnX += chunkLength;
+    }
+
+    public void SpawnInitialChunks()
+    {
+        for (int count = 0; count < amountChunksOnScreen; count++)
+        {
+            SpawnChunk();
+        }
+    }
+
+    public bool HasReachedLimit()
+    {
+        if (objPlayer.transform.position.x > (spawnX - amountChunksOnScreen * chunkLength))
+            return true;
+
+        return false;
     }
 
 }
