@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
 
     private void Start()
     {
-        rb2D.velocity = velocity;
+        //rb2D.velocity = velocity;
     }
 
     private void Update()
