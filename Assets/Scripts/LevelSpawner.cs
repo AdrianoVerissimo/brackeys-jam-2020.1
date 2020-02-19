@@ -4,95 +4,39 @@ using System.Collections.Generic;
 
 public class LevelSpawner : MonoBehaviour
 {
-    public LevelConfig[] levelConfig;
+    public GameObject[] chunksToSpawn;
 
-    private int currentLevel = 0;
-    private Coroutine coroutineCurrentLevel;
-    private Coroutine coroutineSpawnObject;
+    public int amountChunksOnScreen = 2;
+    public float spawnX = 0f;
+    public float chunkLength = 13.32f;
 
-    // Use this for initialization
-    void Start()
-    {
-        coroutineCurrentLevel = StartCoroutine(LevelTimer());
-    }
+    protected GameObject objPlayer;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        objPlayer = GameObject.FindGameObjectWithTag("Player");
 
-    }
-
-    
-    public LevelConfig GetCurrentLevel()
-    {
-        return levelConfig[currentLevel];
-    }
-    public void SetCurrentLevel(int value)
-    {
-        currentLevel = value;
-    }
-    public void IncreaseLevel()
-    {
-        if (currentLevel + 1 >= levelConfig.Length)
-            return;
-
-        SetCurrentLevel(currentLevel + 1);
-    }
-    public void DecreaseLevel()
-    {
-        if (currentLevel - 1 <= 0)
-            return;
-
-        SetCurrentLevel(currentLevel - 1);
-    }
-    public void FinishLevel()
-    {
-        StopCoroutine(coroutineSpawnObject);
-    }
-
-    public IEnumerator LevelTimer()
-    {
-        while (true)
+        for(int count = 0; count < amountChunksOnScreen; count++)
         {
-            print("starting level: " + currentLevel);
-
-            coroutineSpawnObject = StartCoroutine(GetCurrentLevel().SpawnObject());
-
-            yield return new WaitForSeconds(GetCurrentLevel().levelDuration);
-
-            print("finishing level: " + currentLevel);
-
-            FinishLevel();
-            IncreaseLevel();
+            SpawnChunk();
         }
     }
-}
 
-[System.Serializable]
-public class LevelConfig
-{
-    public LevelObject[] listObjects;
-    public float levelDuration = 10f;
-    public float instantiationInterval = 1f;
-
-    public IEnumerator SpawnObject()
+    private void Update()
     {
-        while (true)
+        if (objPlayer.transform.position.x > (spawnX - amountChunksOnScreen * chunkLength))
         {
-            int rand = Random.Range(0, listObjects.Length);
-            LevelObject objSpawn = listObjects[rand];
-            GameObject obj = objSpawn.objectToSpawn;
-
-            MonoBehaviour.Instantiate(obj, objSpawn.transformPosition.position, Quaternion.identity);
-
-            yield return new WaitForSeconds(instantiationInterval);
+            SpawnChunk();
         }
     }
-}
 
-[System.Serializable]
-public class LevelObject
-{
-    public Transform transformPosition;
-    public GameObject objectToSpawn;
+    public void SpawnChunk()
+    {
+        int rand = Random.Range(0, chunksToSpawn.Length);
+        Vector2 spawnPosition = new Vector2(spawnX, 0f);
+
+        GameObject obj = Instantiate(chunksToSpawn[rand], spawnPosition, Quaternion.identity, transform);
+        spawnX += chunkLength;
+    }
+
 }
