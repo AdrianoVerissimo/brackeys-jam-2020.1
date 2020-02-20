@@ -72,6 +72,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChunkBase2
       objectReference: {fileID: 0}
+    - target: {fileID: 5932616100362197623, guid: 739b4dcb263014f45879d9ef394df37e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5932616100735352228, guid: 739b4dcb263014f45879d9ef394df37e,
         type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.size
@@ -256,6 +261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932616100735352233, guid: 739b4dcb263014f45879d9ef394df37e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 739b4dcb263014f45879d9ef394df37e, type: 3}

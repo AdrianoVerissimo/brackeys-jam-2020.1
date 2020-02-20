@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5932616100362197620}
   - component: {fileID: -7691116368854239440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChunkBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 5932616100735352229}
   - component: {fileID: 5932616100735352228}
   - component: {fileID: 5932616100735352231}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

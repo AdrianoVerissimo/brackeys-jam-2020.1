@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 8209991233262966646}
   - component: {fileID: 8209991233262966644}
   - component: {fileID: 8209991233262966647}
-  - component: {fileID: 8209991233262966645}
   - component: {fileID: 8209991233262966650}
   m_Layer: 0
   m_Name: Player
@@ -156,28 +155,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.8, y: 1.25}
   m_Direction: 0
---- !u!114 &8209991233262966645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8209991233262966641}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af190d46c5a00ff4eb3bfc6333897e3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puppet: {fileID: 8209991233386442241}
-  acceleration: 50
-  maxSpeed: 21
-  jumpForce: 20
-  minFlipSpeed: 0.1
-  jumpGravityScale: 1
-  fallGravityScale: 1
-  groundedGravityScale: 1
-  resetSpeedOnLand: 0
-  jumpInput: 0
 --- !u!114 &8209991233262966650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +170,7 @@ MonoBehaviour:
   puppet: {fileID: 8209991233386442241}
   acceleration: 10
   maxSpeed: 5
-  jumpForce: 20
+  jumpForce: 10
   minFlipSpeed: 0.1
   jumpGravityScale: 1
   fallGravityScale: 1
@@ -201,6 +178,12 @@ MonoBehaviour:
   resetSpeedOnLand: 0
   jumpInput: 1
   startMovingDirection: 1
+  SoftGroundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  HardGroundMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &8209991233386442240
 GameObject:
   m_ObjectHideFlags: 0
