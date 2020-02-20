@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class RunnerCharacterController2D : CharacterController2D
 {
@@ -39,5 +40,6 @@ public class RunnerCharacterController2D : CharacterController2D
     public virtual void Die()
     {
         print("You died");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

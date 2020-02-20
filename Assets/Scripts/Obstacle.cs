@@ -13,6 +13,7 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("oi");
         if (CheckPlayerTag(collision.tag))
         {
             CollisionAction();
@@ -25,6 +26,7 @@ public class Obstacle : MonoBehaviour
         {
             if (value == item)
             {
+                print("collision");
                 return true;
             }
         }
@@ -34,6 +36,7 @@ public class Obstacle : MonoBehaviour
 
     public virtual void CollisionAction()
     {
+        print("die");
         player.Die();
     }
 }
