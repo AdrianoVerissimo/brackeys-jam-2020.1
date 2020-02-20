@@ -15,7 +15,7 @@ public class Obstacle : MonoBehaviour
     {
         if (CheckPlayerTag(collision.tag))
         {
-            player.Die();
+            CollisionAction();
         }
     }
 
@@ -30,5 +30,10 @@ public class Obstacle : MonoBehaviour
         }
 
         return false;
+    }
+
+    public virtual void CollisionAction()
+    {
+        player.Die();
     }
 }
