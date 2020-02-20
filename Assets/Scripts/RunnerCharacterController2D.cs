@@ -35,4 +35,9 @@ public class RunnerCharacterController2D : CharacterController2D
             movementInput = new Vector2(moveHorizontal, 0f);
         }
     }
+
+    public virtual void Die()
+    {
+        print("You died");
+    }
 }

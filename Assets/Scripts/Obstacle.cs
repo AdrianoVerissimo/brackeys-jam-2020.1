@@ -3,16 +3,32 @@ using System.Collections;
 
 public class Obstacle : MonoBehaviour
 {
-    public Rigidbody2D rb2D;
-    public Vector2 velocity;
+    protected RunnerCharacterController2D player;
+    public string[] playerTags;
 
     private void Start()
     {
-        //rb2D.velocity = velocity;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<RunnerCharacterController2D>();
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (CheckPlayerTag(collision.tag))
+        {
+            player.Die();
+        }
+    }
+
+    public bool CheckPlayerTag(string value)
+    {
+        foreach (var item in playerTags)
+        {
+            if (value == item)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
