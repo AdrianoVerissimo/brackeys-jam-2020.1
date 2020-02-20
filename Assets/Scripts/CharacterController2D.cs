@@ -50,9 +50,6 @@ public class CharacterController2D : MonoBehaviour
 
     protected virtual void Start()
     {
-        jumpInput = false;
-        isJumping = false;
-
         controllerRigidbody = GetComponent<Rigidbody2D>();
         controllerCollider = GetComponent<Collider2D>();
         softGroundMask = LayerMask.GetMask("Ground Soft");

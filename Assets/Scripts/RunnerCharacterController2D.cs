@@ -16,6 +16,9 @@ public class RunnerCharacterController2D : CharacterController2D
 
     protected override void Start()
     {
+        jumpInput = false;
+        isJumping = false;
+
         base.Start();
 
         base.softGroundMask = SoftGroundMask;
