@@ -28,19 +28,19 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] float groundedGravityScale = 1.0f;
     [SerializeField] bool resetSpeedOnLand = false;
 
-    private Rigidbody2D controllerRigidbody;
-    private Collider2D controllerCollider;
-    private LayerMask softGroundMask;
-    private LayerMask hardGroundMask;
+    protected Rigidbody2D controllerRigidbody;
+    protected Collider2D controllerCollider;
+    protected LayerMask softGroundMask;
+    protected LayerMask hardGroundMask;
 
-    private Vector2 movementInput;
-    [SerializeField] private bool jumpInput;
+    protected Vector2 movementInput;
+    [SerializeField] protected bool jumpInput;
 
-    private Vector2 prevVelocity;
-    private GroundType groundType;
-    private bool isFlipped;
-    private bool isJumping;
-    private bool isFalling;
+    protected Vector2 prevVelocity;
+    protected GroundType groundType;
+    protected bool isFlipped;
+    protected bool isJumping;
+    protected bool isFalling;
 
     //private int animatorGroundedBool;
     //private int animatorRunningSpeed;
@@ -48,7 +48,7 @@ public class CharacterController2D : MonoBehaviour
 
     public bool CanMove { get; set; }
 
-    void Start()
+    protected virtual void Start()
     {
         controllerRigidbody = GetComponent<Rigidbody2D>();
         controllerCollider = GetComponent<Collider2D>();
@@ -62,7 +62,7 @@ public class CharacterController2D : MonoBehaviour
         CanMove = true;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (!CanMove)
             return;
@@ -82,7 +82,7 @@ public class CharacterController2D : MonoBehaviour
             jumpInput = true;
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         UpdateGrounding();
         UpdateVelocity();
@@ -93,7 +93,7 @@ public class CharacterController2D : MonoBehaviour
         prevVelocity = controllerRigidbody.velocity;
     }
 
-    private void UpdateGrounding()
+    protected virtual void UpdateGrounding()
     {
         // Use character collider to check if touching ground layers
         if (controllerCollider.IsTouchingLayers(softGroundMask))
@@ -107,7 +107,7 @@ public class CharacterController2D : MonoBehaviour
         //animator.SetBool(animatorGroundedBool, groundType != GroundType.None);
     }
 
-    private void UpdateVelocity()
+    protected virtual void UpdateVelocity()
     {
         Vector2 velocity = controllerRigidbody.velocity;
 
@@ -130,7 +130,7 @@ public class CharacterController2D : MonoBehaviour
 
     }
 
-    private void UpdateJump()
+    protected virtual void UpdateJump()
     {
         // Set falling flag
         if (isJumping && controllerRigidbody.velocity.y < 0)
@@ -170,7 +170,7 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
-    private void UpdateDirection()
+    protected virtual void UpdateDirection()
     {
         // Use scale to flip character depending on direction
         if (controllerRigidbody.velocity.x > minFlipSpeed && isFlipped)
@@ -186,7 +186,7 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    private void UpdateGravityScale()
+    protected virtual void UpdateGravityScale()
     {
         // Use grounded gravity scale by default.
         var gravityScale = groundedGravityScale;
