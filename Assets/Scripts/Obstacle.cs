@@ -25,7 +25,6 @@ public class Obstacle : MonoBehaviour
         {
             if (value == item)
             {
-                print("collision");
                 return true;
             }
         }
