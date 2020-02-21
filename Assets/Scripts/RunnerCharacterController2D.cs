@@ -45,6 +45,12 @@ public class RunnerCharacterController2D : CharacterController2D
     public virtual void Die()
     {
         print("You died");
+
+        int score = ScoreController.Instance.GetScore();
+
+        if (DataController.CheckHighscoreBeat(score))
+            DataController.SaveHighscore(score);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

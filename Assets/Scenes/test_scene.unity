@@ -531,6 +531,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7930382202975720281, guid: 7a459b605524a444c9f32ae6e830127f,
+        type: 3}
+      propertyPath: chunksToSpawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930382202975720281, guid: 7a459b605524a444c9f32ae6e830127f,
+        type: 3}
+      propertyPath: chunksToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 6788947641088989137, guid: ac18011be6109314480665ed45d9beac,
+        type: 3}
     - target: {fileID: 7930382202975720282, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}
       propertyPath: m_LocalPosition.x
