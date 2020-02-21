@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class RunnerCharacterController2D : CharacterController2D
 {
@@ -41,5 +42,11 @@ public class RunnerCharacterController2D : CharacterController2D
     {
         print("You died");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public virtual void ZeroVelocityY()
+    {
+        Vector2 newVelocity = new Vector2(controllerRigidbody.velocity.x, 0f);
+        controllerRigidbody.velocity = newVelocity;
     }
 }
