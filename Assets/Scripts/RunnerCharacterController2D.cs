@@ -16,6 +16,8 @@ public class RunnerCharacterController2D : CharacterController2D
     public LayerMask SoftGroundMask;
     public LayerMask HardGroundMask;
 
+    public static RunnerCharacterController2D Instance;
+
     protected override void Start()
     {
         jumpInput = false;
@@ -25,6 +27,8 @@ public class RunnerCharacterController2D : CharacterController2D
 
         base.softGroundMask = SoftGroundMask;
         base.hardGroundMask = HardGroundMask;
+
+        Instance = this;
     }
 
     protected override void Update()

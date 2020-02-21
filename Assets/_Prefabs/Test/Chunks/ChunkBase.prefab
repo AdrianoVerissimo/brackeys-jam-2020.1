@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkLength: 13.32
-  dificulty: 0
+  dificulty: 1
+  scoreMultiplicator: 100
 --- !u!1 &5932616100735352233
 GameObject:
   m_ObjectHideFlags: 0

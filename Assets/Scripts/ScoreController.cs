@@ -36,6 +36,7 @@ public class ScoreController : MonoBehaviour
     public virtual void EarnScore(int value)
     {
         currentScore += value;
+        print(currentScore);
 
         if (currentScore < 0)
             currentScore = 0;
