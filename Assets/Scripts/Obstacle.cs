@@ -13,7 +13,6 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("oi");
         if (CheckPlayerTag(collision.tag))
         {
             CollisionAction();
