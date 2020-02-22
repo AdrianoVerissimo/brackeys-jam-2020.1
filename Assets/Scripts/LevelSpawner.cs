@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LevelSpawner : MonoBehaviour
 {
-    public GameObject[] chunksToSpawn;
+    public Level[] levels;
 
     public int amountChunksOnScreen = 2;
     public float spawnX = 0f;
@@ -12,6 +12,8 @@ public class LevelSpawner : MonoBehaviour
     protected GameObject objPlayer;
     protected float countLimitSpawnChunk = 0f;
     protected List<float> lastChunksLength = new List<float>();
+
+    protected int currentLevelIndex = 0;
 
     private void Start()
     {
@@ -28,10 +30,10 @@ public class LevelSpawner : MonoBehaviour
 
     public void SpawnChunk()
     {
-        int rand = Random.Range(0, chunksToSpawn.Length);
+        int rand = Random.Range(0, GetCurrentLevel().chunksToSpawn.Length);
         Vector2 spawnPosition = new Vector2(spawnX, 0f);
 
-        GameObject obj = Instantiate(chunksToSpawn[rand], spawnPosition, Quaternion.identity, transform);
+        GameObject obj = Instantiate(GetCurrentLevel().chunksToSpawn[rand], spawnPosition, Quaternion.identity, transform);
         Chunk chunk = obj.GetComponent<Chunk>();
         spawnX += chunk.GetChunkLength();
 
@@ -70,4 +72,25 @@ public class LevelSpawner : MonoBehaviour
         return false;
     }
 
+    public virtual Level GetCurrentLevel()
+    {
+        return GetLevel(currentLevelIndex);
+    }
+    public virtual Level GetLevel(int index)
+    {
+        return levels[index];
+    }
+    public virtual void AdvanceLevel()
+    {
+        currentLevelIndex++;
+        if (currentLevelIndex >= levels.Length)
+            currentLevelIndex = levels.Length;
+    }
+}
+
+[System.Serializable]
+public class Level
+{
+    public float levelDuration = 10f;
+    public GameObject[] chunksToSpawn;
 }
