@@ -25,6 +25,7 @@ public class RunnerCharacterController2D : CharacterController2D
 
     protected float xVelocityMultiplicator = 1f;
 
+
     protected override void Start()
     {
         jumpInput = false;
