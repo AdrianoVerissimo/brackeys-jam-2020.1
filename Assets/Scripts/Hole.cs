@@ -5,7 +5,7 @@ public class Hole : Obstacle
 {
 
     public GameObject visibleArea;
-    public GameObject secretArea;
+    //public GameObject secretArea;
 
     public override void CollisionAction()
     {
@@ -14,7 +14,7 @@ public class Hole : Obstacle
 
     public virtual void ShowSecretArea(bool value = true)
     {
-        secretArea.SetActive(value);
+        //secretArea.SetActive(value);
         visibleArea.SetActive(!value);
     }
     public virtual void ShowVisibleArea()
