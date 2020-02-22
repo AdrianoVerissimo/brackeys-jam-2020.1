@@ -69,7 +69,7 @@ public class RunnerCharacterController2D : CharacterController2D
     {
         yield return new WaitForSeconds(waitAfterDeath);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        CanvasGameOver.Instance.ShowPanel();
     }
 
     public virtual void ZeroVelocityY()
