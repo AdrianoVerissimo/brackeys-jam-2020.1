@@ -14,7 +14,7 @@ public class CanvasGameOver : MonoBehaviour
 
     public virtual void PlayAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GoToSceneController.GoToScene(SceneManager.GetActiveScene().name);
     }
     public virtual void ShowPanel(bool value = true)
     {
