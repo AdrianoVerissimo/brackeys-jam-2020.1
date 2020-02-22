@@ -17,9 +17,17 @@ public class Chunk : MonoBehaviour
     public int scoreMultiplicator = 100;
 
     protected bool chunkFinished = false;
+    protected Renderer myRenderer;
+
+    private void Start()
+    {
+        myRenderer = GetComponent<Renderer>();
+    }
 
     private void Update()
     {
+        TryDestroyChunk();
+
         if (!GetChunkFinished())
         {
             if (HasPlayerPassedChunk())
@@ -58,4 +66,14 @@ public class Chunk : MonoBehaviour
     {
         return chunkFinished;
     }
+
+    public void TryDestroyChunk()
+    {
+        Vector2 pos = transform.position;
+        pos.x = pos.x + (chunkLength * 2);
+        pos = Camera.main.WorldToViewportPoint(pos);
+        if (pos.x < 0f)
+            Destroy(gameObject);
+    }
+
 }

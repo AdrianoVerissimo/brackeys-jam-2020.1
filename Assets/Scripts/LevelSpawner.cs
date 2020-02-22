@@ -109,7 +109,6 @@ public class LevelSpawner : MonoBehaviour
     }
     public virtual void ChangePlayerSpeed()
     {
-        print("oi");
         RunnerCharacterController2D.Instance.SetXVelocityMultiplicator(GetCurrentLevel().characterSpeedMultiplicator);
     }
 }
