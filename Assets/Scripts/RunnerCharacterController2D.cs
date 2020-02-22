@@ -23,6 +23,8 @@ public class RunnerCharacterController2D : CharacterController2D
     protected bool isDead = false;
     protected bool isSliding = false;
 
+    protected float xVelocityMultiplicator = 1f;
+
     protected override void Start()
     {
         jumpInput = false;
@@ -106,6 +108,20 @@ public class RunnerCharacterController2D : CharacterController2D
             animator.SetBool("JumpUp", false);
             animator.SetBool("JumpDown", false);
         }
+    }
+
+    protected override void UpdateVelocity()
+    {
+        base.UpdateVelocity();
+
+        Vector2 newVelocity = controllerRigidbody.velocity;
+        newVelocity.x = newVelocity.x * xVelocityMultiplicator;
+        controllerRigidbody.velocity = newVelocity;
+    }
+
+    public virtual void SetXVelocityMultiplicator(float value)
+    {
+        xVelocityMultiplicator = value;
     }
 
     public virtual void SetIsSliding(bool value = true)
