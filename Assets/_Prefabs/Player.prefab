@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8209991233262966644}
   - component: {fileID: 8209991233262966647}
   - component: {fileID: 8209991233262966650}
+  - component: {fileID: 8209991234295767700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -167,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fb26915a9abb241b024497e08421a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   puppet: {fileID: 8209991233386442241}
   acceleration: 10
   maxSpeed: 5
@@ -184,6 +186,25 @@ MonoBehaviour:
   HardGroundMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!95 &8209991234295767700
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209991233262966641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6680142aab197414098b7a031bd30a6d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8209991233386442240
 GameObject:
   m_ObjectHideFlags: 0
