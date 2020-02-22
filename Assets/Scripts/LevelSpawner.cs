@@ -15,11 +15,15 @@ public class LevelSpawner : MonoBehaviour
 
     protected int currentLevelIndex = 0;
 
+    protected Coroutine coroutineCurrentLevelTimer;
+
     private void Start()
     {
         objPlayer = GameObject.FindGameObjectWithTag("Player");
 
         SpawnInitialChunks();
+
+        StartLevel();
     }
 
     private void Update()
@@ -84,7 +88,23 @@ public class LevelSpawner : MonoBehaviour
     {
         currentLevelIndex++;
         if (currentLevelIndex >= levels.Length)
-            currentLevelIndex = levels.Length;
+            currentLevelIndex = levels.Length - 1;
+    }
+    public IEnumerator LevelTimer()
+    {
+        yield return new WaitForSeconds(GetCurrentLevel().levelDuration);
+
+        AdvanceLevel();
+        StopLevel();
+        StartLevel();
+    }
+    public virtual void StartLevel()
+    {
+        coroutineCurrentLevelTimer = StartCoroutine(LevelTimer());
+    }
+    public virtual void StopLevel()
+    {
+        StopCoroutine(coroutineCurrentLevelTimer);
     }
 }
 
