@@ -25,12 +25,14 @@ public class Tunnel : Obstacle
     public override void CollisionAction()
     {
         Tweener tween = player.transform.DOPath(pathsPositions, followDuration, PathType.CatmullRom, PathMode.Sidescroller2D);
+        player.SetIsSliding();
 
         if (resetGravityAfterMove)
         {
             tween.OnComplete(
                 () => {
                     player.ZeroVelocityY();
+                    player.SetIsSliding(false);
                 }
                 );
         }

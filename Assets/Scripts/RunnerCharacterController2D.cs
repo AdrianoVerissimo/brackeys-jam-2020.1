@@ -21,6 +21,7 @@ public class RunnerCharacterController2D : CharacterController2D
     public float waitAfterDeath = 4f;
 
     protected bool isDead = false;
+    protected bool isSliding = false;
 
     protected override void Start()
     {
@@ -79,9 +80,20 @@ public class RunnerCharacterController2D : CharacterController2D
 
     public virtual void UpdateAnimations()
     {
-        if (isDead)
+        if (isDead && !animator.GetBool("Die"))
         {
             animator.SetBool("Die", true);
+            return;
+        }
+
+        if (isSliding)
+        {
+            animator.SetBool("Slide", true);
+            return;
+        }
+        else
+        {
+            animator.SetBool("Slide", false);
         }
 
         if (isJumping)
@@ -94,5 +106,14 @@ public class RunnerCharacterController2D : CharacterController2D
             animator.SetBool("JumpUp", false);
             animator.SetBool("JumpDown", false);
         }
+    }
+
+    public virtual void SetIsSliding(bool value = true)
+    {
+        isSliding = value;
+    }
+    public virtual bool GetIsSliding()
+    {
+        return isSliding;
     }
 }
