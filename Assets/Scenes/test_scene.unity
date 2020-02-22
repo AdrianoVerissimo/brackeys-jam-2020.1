@@ -580,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 7930382202975720282, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7930382202975720282, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}
@@ -1166,6 +1166,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasGameOver
       objectReference: {fileID: 0}
+    - target: {fileID: 177531576894205031, guid: 76e06a83531e1d94a9d09d746ea01182,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76e06a83531e1d94a9d09d746ea01182, type: 3}
 --- !u!1001 &1028271774655485510
@@ -1239,6 +1244,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreController
       objectReference: {fileID: 0}
+    - target: {fileID: 1028271774746855295, guid: 819f5ce279758194e8ab2d0f75fb1715,
+        type: 3}
+      propertyPath: highscoreLabelPrefix
+      value: 'Best:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336093195967964295, guid: 819f5ce279758194e8ab2d0f75fb1715,
+        type: 3}
+      propertyPath: m_Text
+      value: 'BEST: 9999'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 819f5ce279758194e8ab2d0f75fb1715, type: 3}
 --- !u!1001 &4042675372495013361
@@ -1256,7 +1271,7 @@ PrefabInstance:
     - target: {fileID: 4042675373507353538, guid: f346590fdb1850647b45ab4b5009ae14,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4042675373507353540, guid: f346590fdb1850647b45ab4b5009ae14,
         type: 3}
@@ -1296,7 +1311,7 @@ PrefabInstance:
     - target: {fileID: 4042675373507353540, guid: f346590fdb1850647b45ab4b5009ae14,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4042675373507353540, guid: f346590fdb1850647b45ab4b5009ae14,
         type: 3}
@@ -1455,7 +1470,7 @@ PrefabInstance:
     - target: {fileID: 8209991233262966646, guid: 743688ccb14d5194e8bb7b54a661bb6b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8209991233262966646, guid: 743688ccb14d5194e8bb7b54a661bb6b,
         type: 3}

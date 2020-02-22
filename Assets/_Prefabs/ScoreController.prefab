@@ -47,9 +47,9 @@ MonoBehaviour:
   scoreGainValue: 10
   secondsToGainScore: 1
   scoreLabelPrefix: 'Score:'
-  textScore: {fileID: 2441514152826251840}
+  textScore: {fileID: 2103603722479908365}
   highscoreLabelPrefix: 'Highscore:'
-  textHighscore: {fileID: 2441514153625986342}
+  textHighscore: {fileID: 2336093195967964295}
 --- !u!1001 &2441514152681821105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,9 +175,9 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2441514152681821105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2441514153625986342 stripped
+--- !u!114 &2103603722479908365 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1212642967, guid: 6bf2f63e5dff3604e87779f6957c5fb9,
+  m_CorrespondingSourceObject: {fileID: 4382988008310891964, guid: 6bf2f63e5dff3604e87779f6957c5fb9,
     type: 3}
   m_PrefabInstance: {fileID: 2441514152681821105}
   m_PrefabAsset: {fileID: 0}
@@ -187,9 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2441514152826251840 stripped
+--- !u!114 &2336093195967964295 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 435976689, guid: 6bf2f63e5dff3604e87779f6957c5fb9,
+  m_CorrespondingSourceObject: {fileID: 110751941634619190, guid: 6bf2f63e5dff3604e87779f6957c5fb9,
     type: 3}
   m_PrefabInstance: {fileID: 2441514152681821105}
   m_PrefabAsset: {fileID: 0}

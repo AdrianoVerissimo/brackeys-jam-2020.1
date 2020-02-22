@@ -26,7 +26,7 @@ public class ScoreController : MonoBehaviour
         Instance = this;
 
         highscore = DataController.LoadHighscore();
-        UpdateHighscore();
+        UpdateHighscoreUI();
 
         scoreTickCoroutine = StartCoroutine(ScoreTick());
     }
@@ -34,7 +34,13 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateScore();
+        UpdateScoreUI();
+
+        if (CheckHighscoreBeaten())
+        {
+            SetHighScore(currentScore);
+            UpdateHighscoreUI();
+        }
     }
 
     public IEnumerator ScoreTick()
@@ -50,7 +56,7 @@ public class ScoreController : MonoBehaviour
         SetScore(value);
     }
 
-    public virtual void UpdateScore()
+    public virtual void UpdateScoreUI()
     {
         textScore.text = scoreLabelPrefix + " " + currentScore;
     }
@@ -78,9 +84,16 @@ public class ScoreController : MonoBehaviour
         if (highscore < 0)
             highscore = 0;
     }
-    public virtual void UpdateHighscore()
+    public virtual void UpdateHighscoreUI()
     {
         textHighscore.text = highscoreLabelPrefix + " " + highscore;
+    }
+    public virtual bool CheckHighscoreBeaten()
+    {
+        if (currentScore > highscore)
+            return true;
+
+        return false;
     }
 
     public virtual void StopScoreCounter()
