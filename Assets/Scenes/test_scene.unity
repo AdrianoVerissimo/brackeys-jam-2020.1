@@ -322,7 +322,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183097775}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -433,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 5932616100362197623, guid: 739b4dcb263014f45879d9ef394df37e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5932616100735352228, guid: 739b4dcb263014f45879d9ef394df37e,
         type: 3}
@@ -443,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 5932616100735352229, guid: 739b4dcb263014f45879d9ef394df37e,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5932616100735352229, guid: 739b4dcb263014f45879d9ef394df37e,
         type: 3}
@@ -529,7 +529,7 @@ PrefabInstance:
     - target: {fileID: 7930382202975720280, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7930382202975720281, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}
@@ -783,7 +783,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996161604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -894,12 +894,12 @@ PrefabInstance:
     - target: {fileID: 5932616100362197623, guid: 739b4dcb263014f45879d9ef394df37e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5932616100735352229, guid: 739b4dcb263014f45879d9ef394df37e,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 739b4dcb263014f45879d9ef394df37e, type: 3}
@@ -1008,7 +1008,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738251408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -1284,6 +1284,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 72076609772565777, guid: 743688ccb14d5194e8bb7b54a661bb6b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8209991233262966641, guid: 743688ccb14d5194e8bb7b54a661bb6b,
         type: 3}
       propertyPath: m_Name
@@ -1344,6 +1349,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8209991233262966650, guid: 743688ccb14d5194e8bb7b54a661bb6b,
+        type: 3}
+      propertyPath: controllerCollider
+      value: 
+      objectReference: {fileID: 8209991234295767700}
     - target: {fileID: 8209991233386442241, guid: 743688ccb14d5194e8bb7b54a661bb6b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1379,5 +1389,28 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8209991233262966647, guid: 743688ccb14d5194e8bb7b54a661bb6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 743688ccb14d5194e8bb7b54a661bb6b, type: 3}
+--- !u!1 &8209991234295767699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 72076609772565777, guid: 743688ccb14d5194e8bb7b54a661bb6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8209991234295767698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &8209991234295767700
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209991234295767699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.66, y: 1.38}
+  m_Direction: 0

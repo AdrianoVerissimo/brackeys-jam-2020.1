@@ -17,6 +17,7 @@ public class CharacterController2D : MonoBehaviour
     [Header("Character")]
     [SerializeField] protected Animator animator = null; //animation
     [SerializeField] protected Transform puppet = null;
+    public Collider2D controllerCollider;
 
     [Header("Movement")]
     [SerializeField] float acceleration = 0.0f;
@@ -29,7 +30,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] bool resetSpeedOnLand = false;
 
     protected Rigidbody2D controllerRigidbody;
-    protected Collider2D controllerCollider;
+    
     protected LayerMask softGroundMask;
     protected LayerMask hardGroundMask;
 
@@ -51,7 +52,7 @@ public class CharacterController2D : MonoBehaviour
     protected virtual void Start()
     {
         controllerRigidbody = GetComponent<Rigidbody2D>();
-        controllerCollider = GetComponent<Collider2D>();
+        //controllerCollider = GetComponent<Collider2D>();
         softGroundMask = LayerMask.GetMask("Ground Soft");
         hardGroundMask = LayerMask.GetMask("Ground Hard");
 
