@@ -15,8 +15,8 @@ public class CharacterController2D : MonoBehaviour
     readonly Quaternion flippedRotation = new Quaternion(0, 0, 1, 0);
 
     [Header("Character")]
-    [SerializeField] Animator animator = null; //animation
-    [SerializeField] Transform puppet = null;
+    [SerializeField] protected Animator animator = null; //animation
+    [SerializeField] protected Transform puppet = null;
 
     [Header("Movement")]
     [SerializeField] float acceleration = 0.0f;
@@ -42,9 +42,9 @@ public class CharacterController2D : MonoBehaviour
     protected bool isJumping;
     protected bool isFalling;
 
-    private int animatorGroundedBool; //animation
-    private int animatorRunningSpeed; //animation
-    private int animatorJumpTrigger; //animation
+    //private int animatorGroundedBool; //animation
+    //private int animatorRunningSpeed; //animation
+    //private int animatorJumpTrigger; //animation
 
     public bool CanMove { get; set; }
 
@@ -55,9 +55,9 @@ public class CharacterController2D : MonoBehaviour
         softGroundMask = LayerMask.GetMask("Ground Soft");
         hardGroundMask = LayerMask.GetMask("Ground Hard");
 
-        animatorGroundedBool = Animator.StringToHash("Grounded"); //animation
-        animatorRunningSpeed = Animator.StringToHash("RunningSpeed"); //animation
-        animatorJumpTrigger = Animator.StringToHash("Jump"); //animation
+        //animatorGroundedBool = Animator.StringToHash("Grounded"); //animation
+        //animatorRunningSpeed = Animator.StringToHash("RunningSpeed"); //animation
+        //animatorJumpTrigger = Animator.StringToHash("Jump"); //animation
 
 
         CanMove = true;
@@ -105,7 +105,7 @@ public class CharacterController2D : MonoBehaviour
             groundType = GroundType.None;
 
         // Update animator
-        animator.SetBool(animatorGroundedBool, groundType != GroundType.None); //animation
+        //animator.SetBool(animatorGroundedBool, groundType != GroundType.None); //animation
     }
 
     protected virtual void UpdateVelocity()

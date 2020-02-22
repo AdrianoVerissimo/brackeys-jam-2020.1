@@ -18,6 +18,10 @@ public class RunnerCharacterController2D : CharacterController2D
 
     public static RunnerCharacterController2D Instance;
 
+    public float waitAfterDeath = 4f;
+
+    protected bool isDead = false;
+
     protected override void Start()
     {
         jumpInput = false;
@@ -40,16 +44,29 @@ public class RunnerCharacterController2D : CharacterController2D
         {
             movementInput = new Vector2(moveHorizontal, 0f);
         }
+
+        UpdateAnimations();
     }
 
     public virtual void Die()
     {
         print("You died");
 
+        isDead = true;
+        controllerRigidbody.bodyType = RigidbodyType2D.Static;
+        ScoreController.Instance.StopScoreCounter();
+
         int score = ScoreController.Instance.GetScore();
 
         if (DataController.CheckHighscoreBeat(score))
             DataController.SaveHighscore(score);
+
+        StartCoroutine(DieCoroutine());
+    }
+
+    public IEnumerator DieCoroutine()
+    {
+        yield return new WaitForSeconds(waitAfterDeath);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -58,5 +75,24 @@ public class RunnerCharacterController2D : CharacterController2D
     {
         Vector2 newVelocity = new Vector2(controllerRigidbody.velocity.x, 0f);
         controllerRigidbody.velocity = newVelocity;
+    }
+
+    public virtual void UpdateAnimations()
+    {
+        if (isDead)
+        {
+            animator.SetBool("Die", true);
+        }
+
+        if (isJumping)
+        {
+            animator.SetBool("JumpUp", controllerRigidbody.velocity.y > 0f);
+            animator.SetBool("JumpDown", controllerRigidbody.velocity.y < 0f);
+        }
+        else
+        {
+            animator.SetBool("JumpUp", false);
+            animator.SetBool("JumpDown", false);
+        }
     }
 }

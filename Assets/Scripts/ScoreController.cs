@@ -18,6 +18,7 @@ public class ScoreController : MonoBehaviour
 
     protected int currentScore = 0;
     protected int highscore = 0;
+    protected Coroutine scoreTickCoroutine;
 
     // Use this for initialization
     void Start()
@@ -27,7 +28,7 @@ public class ScoreController : MonoBehaviour
         highscore = DataController.LoadHighscore();
         UpdateHighscore();
 
-        StartCoroutine(ScoreTick());
+        scoreTickCoroutine = StartCoroutine(ScoreTick());
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class ScoreController : MonoBehaviour
         yield return new WaitForSeconds(secondsToGainScore);
 
         EarnScore(scoreGainValue);
-        StartCoroutine(ScoreTick());
+        scoreTickCoroutine = StartCoroutine(ScoreTick());
     }
 
     public virtual void EarnScore(int value)
@@ -80,5 +81,10 @@ public class ScoreController : MonoBehaviour
     public virtual void UpdateHighscore()
     {
         textHighscore.text = highscoreLabelPrefix + " " + highscore;
+    }
+
+    public virtual void StopScoreCounter()
+    {
+        StopCoroutine(scoreTickCoroutine);
     }
 }
