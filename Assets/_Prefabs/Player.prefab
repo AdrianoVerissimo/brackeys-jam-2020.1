@@ -90,7 +90,7 @@ MonoBehaviour:
   maxSpeed: 5
   jumpForce: 8
   minFlipSpeed: 0.1
-  jumpGravityScale: 2.1
+  jumpGravityScale: 2.2
   fallGravityScale: 1
   groundedGravityScale: 1
   resetSpeedOnLand: 0

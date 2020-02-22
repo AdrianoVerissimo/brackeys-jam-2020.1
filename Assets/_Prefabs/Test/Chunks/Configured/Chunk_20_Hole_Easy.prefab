@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: dificulty
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -7691116368854239440, guid: 739b4dcb263014f45879d9ef394df37e,
+        type: 3}
+      propertyPath: chunkLength
+      value: 19.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5932616100362197620, guid: 739b4dcb263014f45879d9ef394df37e,
         type: 3}
       propertyPath: m_LocalPosition.x
