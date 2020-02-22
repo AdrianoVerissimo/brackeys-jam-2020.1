@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 341199558}
   - component: {fileID: 341199557}
   m_Layer: 8
-  m_Name: New Sprite
+  m_Name: HoleReveal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
