@@ -88,9 +88,9 @@ MonoBehaviour:
   controllerCollider: {fileID: 0}
   acceleration: 10
   maxSpeed: 5
-  jumpForce: 10
+  jumpForce: 8
   minFlipSpeed: 0.1
-  jumpGravityScale: 1
+  jumpGravityScale: 2.1
   fallGravityScale: 1
   groundedGravityScale: 1
   resetSpeedOnLand: 0
