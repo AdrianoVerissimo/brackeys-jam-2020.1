@@ -621,12 +621,12 @@ PrefabInstance:
     - target: {fileID: 7930382202975720281, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}
       propertyPath: levels.Array.data[1].characterSpeedMultiplicator
-      value: 4
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 7930382202975720281, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}
       propertyPath: levels.Array.data[2].characterSpeedMultiplicator
-      value: 8
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7930382202975720282, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}

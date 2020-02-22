@@ -116,6 +116,7 @@ public class RunnerCharacterController2D : CharacterController2D
 
         Vector2 newVelocity = controllerRigidbody.velocity;
         newVelocity.x = newVelocity.x * xVelocityMultiplicator;
+        controllerRigidbody.velocity = newVelocity;
     }
 
     public virtual void SetXVelocityMultiplicator(float value)
