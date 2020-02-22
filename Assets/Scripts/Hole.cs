@@ -5,7 +5,9 @@ public class Hole : Obstacle
 {
 
     public GameObject visibleArea;
-    //public GameObject secretArea;
+    [SerializeField] private Animation anim;
+    [SerializeField] private AnimationClip clip;
+
 
     public override void CollisionAction()
     {
@@ -14,9 +16,11 @@ public class Hole : Obstacle
 
     public virtual void ShowSecretArea(bool value = true)
     {
-        //secretArea.SetActive(value);
-        visibleArea.SetActive(!value);
+        anim.Stop();
+        anim.clip = clip;
+        anim.Play();
     }
+
     public virtual void ShowVisibleArea()
     {
         ShowSecretArea(false);
