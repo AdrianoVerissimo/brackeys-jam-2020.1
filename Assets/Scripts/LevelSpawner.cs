@@ -97,6 +97,7 @@ public class LevelSpawner : MonoBehaviour
         AdvanceLevel();
         StopLevel();
         StartLevel();
+        ChangePlayerSpeed();
     }
     public virtual void StartLevel()
     {
@@ -106,11 +107,17 @@ public class LevelSpawner : MonoBehaviour
     {
         StopCoroutine(coroutineCurrentLevelTimer);
     }
+    public virtual void ChangePlayerSpeed()
+    {
+        print("oi");
+        RunnerCharacterController2D.Instance.SetXVelocityMultiplicator(GetCurrentLevel().characterSpeedMultiplicator);
+    }
 }
 
 [System.Serializable]
 public class Level
 {
     public float levelDuration = 10f;
+    public float characterSpeedMultiplicator = 1f;
     public GameObject[] chunksToSpawn;
 }

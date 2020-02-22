@@ -20,14 +20,14 @@ public class CharacterController2D : MonoBehaviour
     public Collider2D controllerCollider;
 
     [Header("Movement")]
-    [SerializeField] float acceleration = 0.0f;
-    [SerializeField] float maxSpeed = 0.0f;
-    [SerializeField] float jumpForce = 0.0f;
-    [SerializeField] float minFlipSpeed = 0.1f;
-    [SerializeField] float jumpGravityScale = 1.0f;
-    [SerializeField] float fallGravityScale = 1.0f;
-    [SerializeField] float groundedGravityScale = 1.0f;
-    [SerializeField] bool resetSpeedOnLand = false;
+    [SerializeField] protected float acceleration = 0.0f;
+    [SerializeField] protected float maxSpeed = 0.0f;
+    [SerializeField] protected float jumpForce = 0.0f;
+    [SerializeField] protected float minFlipSpeed = 0.1f;
+    [SerializeField] protected float jumpGravityScale = 1.0f;
+    [SerializeField] protected float fallGravityScale = 1.0f;
+    [SerializeField] protected float groundedGravityScale = 1.0f;
+    [SerializeField] protected bool resetSpeedOnLand = false;
 
     protected Rigidbody2D controllerRigidbody;
     
