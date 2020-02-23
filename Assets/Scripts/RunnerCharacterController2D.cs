@@ -69,6 +69,8 @@ public class RunnerCharacterController2D : CharacterController2D
         if (DataController.CheckHighscoreBeat(score))
             DataController.SaveHighscore(score);
 
+        MusicController.Instance.PauseMusic();
+
         StartCoroutine(DieCoroutine());
     }
 
@@ -76,6 +78,7 @@ public class RunnerCharacterController2D : CharacterController2D
     {
         yield return new WaitForSeconds(waitAfterDeath);
 
+        MusicController.Instance.UnpauseMusic();
         GoToSceneController.GoToScene(SceneManager.GetActiveScene().name);
     }
 
