@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 /* Class description:
  * This class has methods that helps playing sounds, making it easier and more practical.
@@ -14,6 +15,7 @@ public class AudioController : MonoBehaviour {
     [Tooltip("AudioSource that will play the sounds")]
         public AudioSource audioSource;
 
+    public float fadeTime = 1f;
     public float startLoopTime = 0f;
 
     protected AudioClip audioClip = null;
@@ -78,7 +80,9 @@ public class AudioController : MonoBehaviour {
      * */
     virtual public void Pause()
     {
-        audioSource.Pause();
+        audioSource.DOFade(0f, fadeTime).OnComplete(
+            () => audioSource.Pause()
+            );
     }
 
     /* Description:
@@ -87,6 +91,7 @@ public class AudioController : MonoBehaviour {
     virtual public void Unpause()
     {
         audioSource.UnPause();
+        audioSource.DOFade(1f, fadeTime);
     }
 
     public IEnumerator PlayNewStartPosition()
