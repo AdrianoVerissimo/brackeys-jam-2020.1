@@ -230,6 +230,10 @@ MonoBehaviour:
   raycastGroundLeft: {fileID: 1758832963}
   raycastGroundMiddle: {fileID: 652275998}
   raycastGroundRight: {fileID: 529511540}
+  audioJump: {fileID: 8300000, guid: 7766b5216603e964e8110a271a2235e4, type: 3}
+  audioDie: {fileID: 8300000, guid: 9864b7742bb8a6542872446fda621af9, type: 3}
+  audioLanded: {fileID: 8300000, guid: ec39cb751d7fd38408a15fe3918cbc41, type: 3}
+  audioController: {fileID: 8654058646498064043}
 --- !u!1001 &661918879341887409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,6 +306,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3436767860931654093, guid: bb901e6ca1d5e4645a0632a70dec9eaf,
+        type: 3}
+      propertyPath: audioFootstep
+      value: 
+      objectReference: {fileID: 8300000, guid: e9e582ad3968ea844ad870e638f133fd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb901e6ca1d5e4645a0632a70dec9eaf, type: 3}
 --- !u!1 &72076609772565777 stripped
@@ -322,3 +331,15 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 661918879341887409}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8654058646498064043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8157989019563985178, guid: bb901e6ca1d5e4645a0632a70dec9eaf,
+    type: 3}
+  m_PrefabInstance: {fileID: 661918879341887409}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72076609772565777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0b75773b7ab42478cb74fde85014e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
