@@ -908,7 +908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 8a7cd54898f15bb44981b03b357a878b, type: 3}
   stageName: 
-  startPlaying: 0
+  startPlaying: 1
 --- !u!114 &761662616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,6 +1852,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2782733773584944764, guid: 743688ccb14d5194e8bb7b54a661bb6b,
+        type: 3}
+      propertyPath: audioFootstep
+      value: 
+      objectReference: {fileID: 8300000, guid: e9e582ad3968ea844ad870e638f133fd, type: 3}
     - target: {fileID: 8209991233262966641, guid: 743688ccb14d5194e8bb7b54a661bb6b,
         type: 3}
       propertyPath: m_Name
@@ -1912,8 +1917,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8209991233262966650, guid: 743688ccb14d5194e8bb7b54a661bb6b,
+        type: 3}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 8209991234295767699}
+    - target: {fileID: 8209991233262966650, guid: 743688ccb14d5194e8bb7b54a661bb6b,
+        type: 3}
+      propertyPath: audioJump
+      value: 
+      objectReference: {fileID: 8300000, guid: 7766b5216603e964e8110a271a2235e4, type: 3}
+    - target: {fileID: 8209991233262966650, guid: 743688ccb14d5194e8bb7b54a661bb6b,
+        type: 3}
+      propertyPath: audioDie
+      value: 
+      objectReference: {fileID: 8300000, guid: 9864b7742bb8a6542872446fda621af9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 743688ccb14d5194e8bb7b54a661bb6b, type: 3}
+--- !u!114 &8209991234295767699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8654058646498064043, guid: 743688ccb14d5194e8bb7b54a661bb6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8209991234295767698}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0b75773b7ab42478cb74fde85014e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8209991234295767701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8209991233262966646, guid: 743688ccb14d5194e8bb7b54a661bb6b,

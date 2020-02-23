@@ -23,6 +23,12 @@ public class RunnerCharacterController2D : CharacterController2D
 
     public Transform raycastGroundLeft, raycastGroundMiddle, raycastGroundRight;
 
+    [Header("Audio")]
+    public AudioClip audioJump;
+    public AudioClip audioDie;
+    public AudioClip audioLanded;
+    public AudioController audioController;
+
     protected bool isDead = false;
     protected bool isSliding = false;
 
@@ -70,6 +76,7 @@ public class RunnerCharacterController2D : CharacterController2D
             DataController.SaveHighscore(score);
 
         MusicController.Instance.PauseMusic();
+        audioController.PlayAudio(audioDie);
 
         StartCoroutine(DieCoroutine());
     }
@@ -180,12 +187,15 @@ public class RunnerCharacterController2D : CharacterController2D
 
                 // Set jumping flag
                 isJumping = true;
+
+                audioController.PlayAudio(audioJump);
+
                 Debug.Log("isJumping");
             }
         }
 
         // Landed
-        else if (isJumping && isFalling && groundType != GroundType.None)
+        else if (isJumping && isFalling && groundType != GroundType.None && IsGrounded())
         {
             // Since collision with ground stops rigidbody, reset velocity
             if (resetSpeedOnLand)
@@ -197,6 +207,8 @@ public class RunnerCharacterController2D : CharacterController2D
             // Reset jumping flags
             isJumping = false;
             isFalling = false;
+
+            audioController.PlayAudio(audioLanded);
         }
     }
 }
