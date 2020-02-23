@@ -19,11 +19,15 @@ public class RunnerCharacterController2D : CharacterController2D
     public static RunnerCharacterController2D Instance;
 
     public float waitAfterDeath = 4f;
+    public float distanceToGround = 2f;
+
+    public Transform raycastGroundLeft, raycastGroundMiddle, raycastGroundRight;
 
     protected bool isDead = false;
     protected bool isSliding = false;
 
     protected float xVelocityMultiplicator = 1f;
+    protected bool isGrounded = false;
 
 
     protected override void Start()
@@ -132,5 +136,64 @@ public class RunnerCharacterController2D : CharacterController2D
     public virtual bool GetIsSliding()
     {
         return isSliding;
+    }
+
+    public virtual bool IsGrounded()
+    {
+        Vector3 direction = transform.TransformDirection(Vector2.down) * distanceToGround;
+        //Debug.DrawRay(transform.position, direction, Color.green);
+
+        if (
+            Physics2D.Raycast(raycastGroundLeft.position, Vector2.down, distanceToGround, softGroundMask) ||
+            Physics2D.Raycast(raycastGroundMiddle.position, Vector2.down, distanceToGround, softGroundMask) ||
+            Physics2D.Raycast(raycastGroundRight.position, Vector2.down, distanceToGround, softGroundMask)
+            )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    protected override void UpdateJump()
+    {
+        // Set falling flag
+        if (isJumping && controllerRigidbody.velocity.y < 0)
+            isFalling = true;
+
+        // Jump
+        if (jumpInput && groundType != GroundType.None)
+        {
+            if (IsGrounded())
+            {
+                // Jump using impulse force
+                controllerRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+
+                // Set animator
+                //animator.SetTrigger(animatorJumpTrigger);
+
+                // We've consumed the jump, reset it.
+                jumpInput = false;
+
+                // Set jumping flag
+                isJumping = true;
+                Debug.Log("isJumping");
+            }
+        }
+
+        // Landed
+        else if (isJumping && isFalling && groundType != GroundType.None)
+        {
+            // Since collision with ground stops rigidbody, reset velocity
+            if (resetSpeedOnLand)
+            {
+                prevVelocity.y = controllerRigidbody.velocity.y;
+                controllerRigidbody.velocity = prevVelocity;
+            }
+
+            // Reset jumping flags
+            isJumping = false;
+            isFalling = false;
+        }
     }
 }
