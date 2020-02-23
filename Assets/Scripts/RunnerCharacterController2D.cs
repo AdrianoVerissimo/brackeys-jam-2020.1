@@ -64,6 +64,11 @@ public class RunnerCharacterController2D : CharacterController2D
 
     public virtual void Die()
     {
+        if(isDead)
+        {
+            return;
+        }
+
         print("You died");
 
         isDead = true;
