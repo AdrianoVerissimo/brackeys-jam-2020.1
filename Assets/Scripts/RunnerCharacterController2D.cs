@@ -123,6 +123,15 @@ public class RunnerCharacterController2D : CharacterController2D
             animator.SetBool("JumpUp", false);
             animator.SetBool("JumpDown", false);
         }
+
+        if (!IsGrounded() && controllerRigidbody.velocity.y < 0f)
+        {
+            animator.SetBool("JumpDown", true);
+        }
+        else
+        {
+            animator.SetBool("JumpDown", false);
+        }
     }
 
     protected override void UpdateVelocity()
