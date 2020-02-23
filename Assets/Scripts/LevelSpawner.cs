@@ -9,6 +9,8 @@ public class LevelSpawner : MonoBehaviour
     public int amountChunksOnScreen = 2;
     public float spawnX = 0f;
 
+    public LandslidingMovement landsliding;
+
     protected GameObject objPlayer;
     protected float countLimitSpawnChunk = 0f;
     protected List<float> lastChunksLength = new List<float>();
@@ -109,7 +111,9 @@ public class LevelSpawner : MonoBehaviour
     }
     public virtual void ChangePlayerSpeed()
     {
-        RunnerCharacterController2D.Instance.SetXVelocityMultiplicator(GetCurrentLevel().characterSpeedMultiplicator);
+        float newSpeed = GetCurrentLevel().characterSpeedMultiplicator;
+        RunnerCharacterController2D.Instance.SetXVelocityMultiplicator(newSpeed);
+        landsliding.speed = landsliding.defaultSpeed * newSpeed;
     }
 }
 
