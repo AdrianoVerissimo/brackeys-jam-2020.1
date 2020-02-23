@@ -189,6 +189,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coil
       objectReference: {fileID: 0}
+    - target: {fileID: 4438980819319845495, guid: 3953e8783e690854caf41319e90ef927,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3953e8783e690854caf41319e90ef927, type: 3}
 --- !u!4 &7200779392068271230 stripped

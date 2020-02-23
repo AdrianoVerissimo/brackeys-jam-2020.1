@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a0c6f5586a3574e8b5bd27f4e56662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpeed: 4.8
+  rb2d: {fileID: 9031900134743899404}
+  defaultSpeed: 220
   speed: 5
 --- !u!1 &7930382202975720280
 GameObject:
@@ -190,6 +191,12 @@ GameObject:
 --- !u!4 &3205715375208131585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3205715375873066853, guid: 4ca409774c62e62488ec453ab414919c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2074471268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &9031900134743899404 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 9031900134330570344, guid: 4ca409774c62e62488ec453ab414919c,
     type: 3}
   m_PrefabInstance: {fileID: 2074471268}
   m_PrefabAsset: {fileID: 0}
