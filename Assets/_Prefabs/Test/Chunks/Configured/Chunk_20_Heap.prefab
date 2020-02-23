@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5932616100362197620}
   - component: {fileID: -7691116368854239440}
   m_Layer: 8
-  m_Name: ChunkBase
+  m_Name: Chunk_20_Heap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,8 +137,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 10.000001, y: -7.8650007, z: -0.005}
-    m_Extent: {x: 10.640001, y: 8.365001, z: 0.005}
+    m_Center: {x: 10.000001, y: -7.2335577, z: -0.00501}
+    m_Extent: {x: 10.640001, y: 8.996444, z: 0.00501}
 --- !u!114 &5932616100735352228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +164,42 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
     - position: {x: 0, y: 0, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+    - position: {x: 7.5414295, y: 0, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+    - position: {x: 7.685014, y: 1.2923771, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+    - position: {x: 11.831072, y: 1.0426145, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+    - position: {x: 12.8800745, y: 0, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -222,6 +258,10 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.0012799745, y: -16.00128}
   - {x: -0.0009999936, y: 0.0010002765}
+  - {x: 7.5401573, y: 0.00014139677}
+  - {x: 7.684123, y: 1.2934151}
+  - {x: 11.8316765, y: 1.0435997}
+  - {x: 12.8800745, y: 0.0009999936}
   - {x: 20.00102, y: 0.0010200072}
   - {x: 20.00122, y: -16.00122}
   - {x: 0.87888825, y: -16.00046}
