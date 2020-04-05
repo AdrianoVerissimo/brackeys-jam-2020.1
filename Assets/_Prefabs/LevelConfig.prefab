@@ -80,7 +80,7 @@ MonoBehaviour:
     - {fileID: 7551214128537045090, guid: 625e65ab6ecaed04cb07d62a1f6aa2f4, type: 3}
     - {fileID: 7551214128537045090, guid: 727df7c624e523a4ca31218cd373ba12, type: 3}
     - {fileID: 5932616100362197623, guid: 2d511b3348956d24c97b1418055f9831, type: 3}
-  amountChunksOnScreen: 2
+  amountChunksOnScreen: 3
   spawnX: 0
   landsliding: {fileID: 139686074}
 --- !u!1001 &2074471268
