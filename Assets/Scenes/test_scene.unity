@@ -893,11 +893,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7930382202975720281, guid: 7a459b605524a444c9f32ae6e830127f,
-        type: 3}
-      propertyPath: amountChunksOnScreen
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7930382202975720282, guid: 7a459b605524a444c9f32ae6e830127f,
         type: 3}
       propertyPath: m_LocalPosition.x
